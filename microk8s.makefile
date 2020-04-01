@@ -5,7 +5,7 @@ SAMPLE_REGISTRY     ?=localhost:32000
 REL_VERSION         ?=registry
 
 # Add latest tag if LATEST_RELEASE is true
-LATEST_RELEASE ?=
+LATEST_RELEASE ?=true
 
 
 # Docker image build and push setting
