@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapr-go-calculator-multiplier
+  labels:
+    app: multiply
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multiply
+  template:
+    metadata:
+      labels:
+        app: multiply
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/id: "dapr-go-calculator-multiplier"
+        dapr.io/port: "6100"
+    spec:
+      containers:
+      - name: multiply
+        image: localhost:32000/dapr-go-calculator-multiplier:registry
+        ports:
+        - containerPort: 6100
+        imagePullPolicy: Always
