@@ -19,22 +19,22 @@ The following routes forward requests (using pipe) from our React client to our 
 */
 
 app.post('/calculate/add', async (req, res) => {
-  const addUrl = `${daprUrl}/addapp/method/add`;
+  const addUrl = `${daprUrl}/dapr-go-calculator-adder/method/add`;
   req.pipe(request(addUrl)).pipe(res);
 });
 
 app.post('/calculate/subtract', async (req, res) => {
-  const subtractUrl = `${daprUrl}/subtractapp/method/subtract`;
+  const subtractUrl = `${daprUrl}/dapr-go-calculator-subtractor/method/subtract`;
   req.pipe(request(subtractUrl)).pipe(res);
 });
 
 app.post('/calculate/multiply', async (req, res) => {
-  const multiplyUrl = `${daprUrl}/multiplyapp/method/multiply`;
+  const multiplyUrl = `${daprUrl}/dapr-go-calculator-multiplier/method/multiply`;
   req.pipe(request(multiplyUrl)).pipe(res);
 });
 
 app.post('/calculate/divide', async (req, res) => {
-  const divideUrl = `${daprUrl}/divideapp/method/divide`;
+  const divideUrl = `${daprUrl}/dapr-go-calculator-divider/method/divide`;
   req.pipe(request(divideUrl)).pipe(res);
 });
 

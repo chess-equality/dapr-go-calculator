@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: calculator-front-end
+  name: dapr-go-calculator-react-frontend
   labels:
-    app: calculator-front-end
+    app: dapr-go-calculator-react-frontend
 spec:
   selector:
-    app: calculator-front-end
+    app: dapr-go-calculator-react-frontend
   ports:
   - protocol: TCP
     port: 80
@@ -17,26 +17,26 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calculator-front-end
+  name: dapr-go-calculator-react-frontend
   labels:
-    app: calculator-front-end
+    app: dapr-go-calculator-react-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: calculator-front-end
+      app: dapr-go-calculator-react-frontend
   template:
     metadata:
       labels:
-        app: calculator-front-end
+        app: dapr-go-calculator-react-frontend
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/id: "calculator-front-end"
+        dapr.io/id: "dapr-go-calculator-react-frontend"
         dapr.io/port: "8080"
     spec:
       containers:
-      - name: calculator-front-end
-        image: localhost:32000/dapr-go-calculator-react-calculator:registry
+      - name: dapr-go-calculator-react-frontend
+        image: localhost:32000/dapr-go-calculator-react-frontend:registry
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
