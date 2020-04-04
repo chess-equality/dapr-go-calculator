@@ -22,7 +22,7 @@ type Operands struct {
 }
 
 func multiply(w http.ResponseWriter, r *http.Request) {
-	log.Infoln("########## IN add...")
+	log.Infoln("########## IN multiply...")
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	var operands Operands
